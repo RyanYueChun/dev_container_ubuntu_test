@@ -12,13 +12,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 ARG SSL_VERSION=3.2.1
-# RUN curl https://www.openssl.org/source/openssl-3.2.1.tar.gz
-
-# RUN curl https://www.openssl.org/source/openssl-3.2.1.tar.gz
-
-# RUN curl https://www.openssl.org/source/openssl-${SSL_VERSION}.tar.gz
-
-# RUN curl https://www.openssl.org/source/openssl-3.2.1.tar.gz
 
 RUN curl https://www.openssl.org/source/openssl-${SSL_VERSION}.tar.gz -O && \
     tar -xzf openssl-${SSL_VERSION}.tar.gz && \
