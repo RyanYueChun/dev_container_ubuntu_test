@@ -1,0 +1,16 @@
+FROM mcr.microsoft.com/devcontainers/rust:1.0.9-bookworm
+
+# Set the environment variables
+ENV DOCKERVERSION=26.1.3
+
+# Install the curl and build-essential packages
+RUN apt-get update && \
+    apt-get install -y curl build-essential && \
+    apt-get clean
+
+# Install Docker-cli
+RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKERVERSION}.tgz && \
+    tar xzvf docker-${DOCKERVERSION}.tgz --strip 1 -C /usr/local/bin docker/docker && \
+    rm docker-${DOCKERVERSION}.tgz
+# check for  -fsSLO
+
